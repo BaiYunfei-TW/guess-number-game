@@ -1,3 +1,3 @@
 module.exports = function generateAnswer() {
-    return new Array(4);
+    return [1,1,1,1];
 };
