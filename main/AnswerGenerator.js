@@ -1,3 +1,15 @@
+function getRandomNumber() {
+    return Math.floor(Math.random(1) * 10);
+}
+
 module.exports = function generateAnswer() {
-    return [1,2,3,4];
+    const answer = [];
+    while (answer.length < 4) {
+        let num = getRandomNumber();
+        while (answer.includes(num)) {
+            num = getRandomNumber();
+        }
+        answer.push(num);
+    }
+    return answer;
 };

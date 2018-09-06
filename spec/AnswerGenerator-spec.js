@@ -18,4 +18,16 @@ describe('test generate answer', () => {
         let uniqueItem = answer.filter(i => answer.indexOf(i) === answer.lastIndexOf(i));
         expect(uniqueItem.length).toBe(answer.length);
     });
+
+    it('should return different answer in two terms', () => {
+        const answer1 = generateAnswer();
+        const answer2 = generateAnswer();
+        let sameQuantity = answer1.reduce((sameQuantity, num, index) => {
+            if (answer2[index] === num) {
+                sameQuantity ++;
+            }
+            return sameQuantity;
+        }, 0);
+        expect(sameQuantity).toBeLessThan(4);
+    });
 });
