@@ -22,4 +22,16 @@ describe('test compare answer with input', () => {
         };
         expect(result).toEqual(expected);
     });
+
+
+    it('should return 2A1B when the 3 number is correct', () => {
+        const answer = [1, 2, 3, 4];
+        const input = [1, 2, 5, 3];
+        const result = compare(answer, input);
+        const expected = {
+            correct: 2,
+            onlyInclude: 1
+        };
+        expect(result).toEqual(expected);
+    });
 });
